@@ -12,7 +12,7 @@ import time
 @login_required(login_url="/accounts")
 def club(request,club_name):
 
-    driver = webdriver.Firefox()
+    driver = webdriver.Firefox(executable_path="/home/sourav18a/Downloads/geckodriver")
 
     driver.get("http://www.facebook.com")
 
@@ -47,13 +47,18 @@ def club(request,club_name):
 
     data={}
     for elem in elem_full:
+        print(elem)
         tmp = elem.find_element_by_class_name("timestampContent")
         content=elem.find_element_by_class_name("_5pbx")
+        print('content above\n')
         tmp2 = []
         title = content.text.split("\n")
         for tit in title:
             tmp2.append(tit)
+            print(tit)
+            print('\n')
         data[tmp.text]=tmp2
+        print('\n\n\n')
 
     driver.close()
     return render(request, 'css_post.html', {'posts': data, 'club_name':club_name})
