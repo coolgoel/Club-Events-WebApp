@@ -1,0 +1,51 @@
+{% extends 'css_base.html' %}
+{% load static %}
+
+{% block include %}
+    <link rel="stylesheet" type="text/css" href="{% static "posts/post_css.css" %}">
+{% endblock %}
+
+{% block title %}
+  {{club_oname}} 
+{% endblock %}
+
+
+
+{% block content %}
+
+    <div style="margin-top:150px">
+            <div class="row m-40 p-10">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-4 p-5 card">
+                <div class="container bg-light display-4" >{{club_oname}}</div>
+                </div>
+                <div class="col-sm-1 p-5 card">
+                   <div class="container bg-light display-4" ><img src="{% static club_photo %}" class="img-fluid"></div>
+                </div>
+                <div class="col-sm-1"></div>
+                <div class="col-sm-2 p-5 card">
+                <div class="container bg-light display-4" ><a href="{% url 'club' "codingclubiitg" %}" >Update Now</a></div>
+                </div>
+                </div>
+            <div class="col-sm-2"></div>
+            </div>
+    </div>
+    <br>
+    <div>
+        {% for time_stamp,post in posts.items %}
+            <div class="row m-40 p-10">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8 p-5 card">
+                <div class="container bg-light display-4" >
+                    <h3>Posted on: {{time_stamp}}</h3><br>
+                    {% for lines in post %}
+                        {{lines}}
+                    {% endfor %}
+                </div>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+            <br><br>
+        {% endfor %}
+    </div>
+{% endblock %}

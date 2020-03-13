@@ -1,0 +1,106 @@
+{% extends 'css_base.html' %}
+{% load static %}
+
+{% block include %}
+    <link rel="stylesheet" type="text/css" href="{% static "home/home_css.css" %}">
+    <style>
+        .content{
+            margin-top:150px;
+        }
+    </style>
+{% endblock %}
+
+
+{% block title %}
+  IITG Clubs
+{% endblock %}
+
+{% block content %}
+
+    <div class="content">
+        <div class="cards-list">
+            <a href="{% url 'post' "codingclubiitg" %}">
+            <div class="card">
+                <div class="card_image"> <img src="https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif" /> </div>
+                <div class="card_title title-white"><p>Coding Club</p></div>
+            </div>
+            </a>
+
+            <a href="{% url 'post' "robotics.iitg" %}">
+            <div class="card">
+                <div class="card_image"><img src="https://media.giphy.com/media/Ps89uHS7n72j6/giphy.gif" /></div>
+                <div class="card_title title-white"><p>Robotics Club</p></div>
+            </div>
+            </a>
+        </div>
+
+        <div class="cards-list">
+            <a href="{% url 'post' "electronics.iitg" %}">
+            <div class="card">
+                <div class="card_image"> <img src="https://media.giphy.com/media/LwIyvaNcnzsD6/giphy.gif" /> </div>
+                <div class="card_title title-white"><p>Electronics Club</p></div>
+            </div>
+            </a>
+
+            <a href="{% url 'post' "Aeroiitg" %}">
+            <div class="card">
+                <div class="card_image"><img src="https://media.giphy.com/media/DvyxIpxw9cCuQ/giphy.gif" /></div>
+                <div class="card_title title-white"><p>Aeromodelling Club</p></div>
+            </div>
+            </a>
+        </div>
+        <div class="cards-list">
+            <a href="{% url 'post' "litsociitg" %}">
+            <div class="card">
+                <div class="card_image"> <img src="https://media.giphy.com/media/aQpRW4e8AgH04TphUFa/giphy.gif" /> </div>
+                <div class="card_title title-white"><p>Litsoc</p></div>
+            </div>
+            </a>
+
+            <a href="{% url 'post' "iitgai" %}">
+            <div class="card">
+                <div class="card_image"><img src="https://media.giphy.com/media/ntRqwVvzwDQY0/giphy.gif" /></div>
+                <div class="card_title title-white"><p>IITG.AI</p></div>
+            </div>
+            </a>
+        </div>
+
+        <div class="cards-list">
+            <a href="{% url 'post' "xpressionsiitg" %}">
+            <div class="card">
+                <div class="card_image"> <img src="https://media.giphy.com/media/A7ZbCuv0fJ0POGucwV/giphy.gif" /> </div>
+                <div class="card_title title-white"><p>Xpressions</p></div>
+            </div>
+            </a>
+
+            <a href="{% url 'post' "cadence.iitg" %}">
+            <div class="card">
+                <div class="card_image"><img src="https://media.giphy.com/media/1k8AAdHsWW1ig/giphy.gif" /></div>
+                <div class="card_title title-white"><p>Cadence</p></div>
+            </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- <div>
+        <div class="card">
+            <div class="card_image">
+            <img src="https://media.giphy.com/media/10SvWCbt1ytWCc/giphy.gif" />
+            </div>
+            <div class="card_title">
+            <p>Card Title</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card_image">
+            <img src="https://media.giphy.com/media/LwIyvaNcnzsD6/giphy.gif" />
+            </div>
+            <div class="card_title title-black">
+            <p>Card Title</p>
+            </div>
+        </div>
+
+    </div> -->
+
+{% endblock %}
